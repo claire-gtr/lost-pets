@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>All the lost pets</h1>
+
+  <% @pets.each do |pet| %>
+    <div class="card m-2">
+      <p><%= pet.name %></p>
+      <p><%= pet.found_days_ago %></p>
+      <%= link_to 'See more', pet_path(pet)  %>
+      <%= link_to pet_path(pet), method: :delete, data: { confirm: "Are you sure ?"} do %>
+      image
+      <% end %>
+    </div>
+  <% end %>
+  <p><%= link_to "new pet", new_pet_path  %></p>
+</div>
+
